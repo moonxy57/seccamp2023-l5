@@ -2,10 +2,12 @@ enclave
 {
 	trusted
 	{
-		
+		/*These are ECALL defines.*/
+		public int ecall_tmp([in, size = message_len]const char *message, size_t message_len);
 	};
 	untrusted
 	{
-		
+		/*There are OCALL defines.*/
+		void ocall_print([in, string]const char *str);
 	};
 };
